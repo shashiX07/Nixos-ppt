@@ -21,7 +21,8 @@ const connect = require('gulp-connect')
 const autoprefixer = require('gulp-autoprefixer')
 
 const root = yargs.argv.root || '.'
-const port = yargs.argv.port || 8000
+// Use Render’s port if provided, or default to 8000
+const port = process.env.PORT || 8000
 const host = yargs.argv.host || 'localhost'
 
 const cssLicense = `
@@ -300,34 +301,10 @@ gulp.task('reload', () => {
 });
 
 gulp.task('serve', () => {
-
-    connect.server({
-        root: root,
-        port: port,
-        host: host,
-        livereload: false
-    })
-
-    const slidesRoot = root.endsWith('/') ? root : root + '/'
-    gulp.watch([
-        slidesRoot + '**/*.html',
-        slidesRoot + '**/*.md',
-        `!${slidesRoot}**/node_modules/**`, // ignore node_modules
-    ], gulp.series('reload'))
-
-
-    gulp.watch(['plugin/**/plugin.js', 'plugin/**/*.html'], gulp.series('plugins', 'reload'))
-
-    gulp.watch([
-        'css/theme/source/**/*.{sass,scss}',
-        'css/theme/template/*.{sass,scss}',
-    ], gulp.series('css-themes', 'reload'))
-
-    gulp.watch([
-        'css/*.scss',
-        'css/print/*.{sass,scss,css}'
-    ], gulp.series('css-core', 'reload'))
-
-    gulp.watch(['test/*.html'], gulp.series('test'))
-
-})
+  connect.server({
+    root: 'dist',             // Or wherever your presentation files are
+    port: port,
+    host: '0.0.0.0',          // Listen on all interfaces
+    livereload: false
+  });
+});
