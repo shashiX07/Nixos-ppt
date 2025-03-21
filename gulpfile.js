@@ -302,7 +302,7 @@ gulp.task('serve', () => {
         root: root,
         port: port,
         host: host,
-        livereload: true
+        livereload: false
     })
 
     const slidesRoot = root.endsWith('/') ? root : root + '/'
