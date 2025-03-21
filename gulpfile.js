@@ -293,8 +293,11 @@ gulp.task('package', gulp.series(async () => {
 
 }))
 
-gulp.task('reload', () => gulp.src(['index.html'])
-    .pipe(connect.reload()));
+gulp.task('reload', () => {
+  // Disabled connect.reload since Render is picking it up
+  // return gulp.src(['index.html']).pipe(connect.reload());
+  return gulp.src(['index.html']);
+});
 
 gulp.task('serve', () => {
 
@@ -312,7 +315,6 @@ gulp.task('serve', () => {
         `!${slidesRoot}**/node_modules/**`, // ignore node_modules
     ], gulp.series('reload'))
 
-    gulp.watch(['js/**'], gulp.series('js', 'reload', 'eslint'))
 
     gulp.watch(['plugin/**/plugin.js', 'plugin/**/*.html'], gulp.series('plugins', 'reload'))
 
