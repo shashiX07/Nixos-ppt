@@ -1,2 +1,8 @@
 * text=auto
-*.js text eol=lf
+
+# Enforce LF for common web file types:
+*.js            text eol=lf
+*.css           text eol=lf
+*.html          text eol=lf
+*.md            text eol=lf
+*.json          text eol=lf

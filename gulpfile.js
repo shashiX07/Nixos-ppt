@@ -302,9 +302,9 @@ gulp.task('reload', () => {
 
 gulp.task('serve', () => {
   connect.server({
-    root: 'dist',             // Or wherever your presentation files are
+    root: '/',             // Or wherever your presentation files are
     port: port,
-    host: '0.0.0.0',          // Listen on all interfaces
+    host: '127.0.0.1',          // Listen on all interfaces
     livereload: false
   });
 });
