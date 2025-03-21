@@ -62,7 +62,7 @@
             font-family: 'Times New Roman', Times, serif !important;
         }
 
-        .list-img {
+        .list-img data-preview-image {
             width: 10%;
             margin-right: 2%;
         }
@@ -94,11 +94,12 @@
 
         tbody tr {
             background-color: rgb(201, 218, 248);
-			color: black;
+            color: black;
         }
-		li{
-			color: black !important;
-		}
+
+        li {
+            color: black !important;
+        }
 
         /* Make it more responsive for smaller screens */
         @media (max-width: 768px) {
@@ -120,7 +121,7 @@
             .custom-list li {
                 background-size: 15px 15px;
                 padding-left: 25px;
-				color: black;
+                color: black;
 
             }
 
@@ -145,7 +146,7 @@
                         system state unpredictably, NixOS ensures a consistent environment through <strong>declarative
                             configuration management.</strong>
                     </p>
-                    <img src="assets/30dlinux-removebg-preview.png" alt="linux-30-img"
+                    <img data-preview-image src="assets/30dlinux-removebg-preview.png" alt="linux-30-img"
                         style="position: absolutes; width: 20%; right: 0;z-index: 1000;">
                 </div>
                 <p style="background : transparent; margin-top: 10%;">
@@ -159,8 +160,7 @@
                 <section class="vslide3-1">
                     <h1>Features of NixOS :</h1>
                     <div style="display: flex;">
-                        <img class="list-img" src="assets/liststyle.png" alt="list">
-                        <p><strong>Declarative System Configuration :</strong> In NixOS, the entire system configuration
+                        <p><strong>1 : Declarative System Configuration :</strong> In NixOS, the entire system configuration
                             is
                             written in a single file (/etc/nixos/configuration.nix). Users define the system state
                             (packages, services, configurations) in this file, and the system ensures that the desired
@@ -169,17 +169,16 @@
                     </div>
 
                     <div style="display: flex;">
-                        <img class="list-img" src="assets/liststyle.png" alt="list">
-                        <p><strong>Reproducibility :</strong> Since the entire system state is defined in a single file,
+                        <p><strong>2 : Reproducibility :</strong> Since the entire system state is defined in a single file,
                             you can <b>reproduce the same environment</b> on different machines by simply copying the
                             configuration file.</p>
                     </div>
 
-                    <img src="assets/Nix-config.png" alt="code" style="width: 70%;top: 0;">
+                    <img data-preview-image src="assets/Nix-config.png" alt="code" style="width: 70%;top: 0;">
                 </section>
                 <section class="vslide3-2">
                     <div class="" style="display: flex;">
-                        <img src="assets/penguin-blink.png" alt="penguin-blink" style="width: 30%;right: 0;">
+                        <img data-preview-image src="assets/penguin-blink.png" alt="penguin-blink" style="width: 30%;right: 0;">
                         <p style="display: flex; align-items:center;">Due to Reproducibility Nix is especially useful
                             for developers, server admins, and scientists who need consistent
                             environments across multiple systems.</p>
@@ -195,9 +194,9 @@
                         can
                         instantly rollback to the previous working state using:
                     </p>
-                    <img style="position: absolute; top: 65%;right: 19%;" src="assets/rollback.png" alt="rollback">
+                    <img data-preview-image style="position: absolute; top: 65%;right: 19%;" src="assets/rollback.png" alt="rollback">
                     <div style="display: flex; position: absolute;top: 90%;">
-                        <img src="assets/penguin-fish.png" alt="penguin-fish" style="width: 15%;right: 0;">
+                        <img data-preview-image src="assets/penguin-fish.png" alt="penguin-fish" style="width: 15%;right: 0;">
                         <p>
                             Unlike traditional package managers (APT, DNF, Pacman), where package upgrades can cause
                             partial system failures, NixOS ensures atomic changes, meaning the system is always in a
@@ -224,7 +223,8 @@
                     Each user gets a separate environment, reducing conflicts.
                     <br>
                     <i>Example :</i> <br>
-                    <b style="background-color: rgb(144, 176, 246, 0.5); padding: 2px;border-radius: 10px;"><i>nix-env -iA nixpkgs.firefox</i></b>
+                    <b style="background-color: rgb(144, 176, 246, 0.5); padding: 2px;border-radius: 10px;"><i>nix-env
+                            -iA nixpkgs.firefox</i></b>
                 </p>
                 <p>
                     <strong>
@@ -232,7 +232,8 @@
                     </strong>
                     Since packages are immutable, old versions accumulate in /nix/store.
                     You can remove unused packages with: <br>
-                    <b style="background-color: rgb(144, 176, 246, 0.5); padding: 2px;border-radius: 10px;"><i>nix-collect-garbage -d</i></b>
+                    <b style="background-color: rgb(144, 176, 246, 0.5); padding: 2px;border-radius: 10px;"><i>nix-collect-garbage
+                            -d</i></b>
                 </p>
             </section>
             <section class="slide6" data-background-image="/assets/back.jpg">
@@ -289,59 +290,113 @@
 
                 </section>
             </section>
-			<section class="slide7" data-background-image="/assets/back.jpg">
-				<div style="display: flex; justify-content: space-between;">
-				<h1 style="height: 70% !important;">Use Cases for NixOS</h1>
-				<img src="assets/peng-lap.jpg" alt="" style="width: 10%;">
-			</div>
-				<p>
-					<strong>1. DevOps & CI/CD : </strong>
-					Ensures identical environments across developers’ machines and CI/CD pipelines.
-No "works on my machine" issues. <br><br>
+            <section class="slide7" data-background-image="/assets/back.jpg">
+                <div style="display: flex; justify-content: space-between;">
+                    <h1 style="height: 70% !important;">Use Cases for NixOS</h1>
+                    <img data-preview-image src="assets/peng-lap.jpg" alt="" style="width: 10%;">
+                </div>
+                <p>
+                    <strong>1. DevOps & CI/CD : </strong>
+                    Ensures identical environments across developers’ machines and CI/CD pipelines.
+                    No "works on my machine" issues. <br><br>
 
-					<strong>2. Software Development : </strong>
-					Developers can use multiple versions of the same software without conflicts.
-Example: Having Python 2.7, 3.8, and 3.10 installed simultaneously. <br><br>
-					<strong>3. System Administrators : </strong>
-					Rollbacks and atomic updates make managing servers easier and safer. <br><br>
-					<strong>4. Research and Science : </strong>
-					Scientists needing reproducible computational environments benefit from the declarative approach. <br><br>
-					<strong>5. Security : </strong>
-					Since packages are immutable, there is less risk of accidental modification.
-No more accidental "rm -rf /usr/bin" disasters. <br><br>
-				</p>
-			</section>
-			<section class="slide8" data-background-image="/assets/back.jpg">
-				<h1>Downsides of NixOS</h1>
-				<p>
-					<strong>1. Steep Learning Curve:</strong>
-					Nix’s functional programming language is unusual for system configurations.
-Learning to write configuration.nix takes time. <br><br>
-					</p>
-					<p>
-					<strong>
-						2. Smaller Community:
-					</strong>
-					Compared to Ubuntu, Fedora, or Arch, NixOS has a smaller user base.
-						Finding help may take longer. <br><br>
-					</p>
-					<p>
-				<strong>3. Storage Overhead:</strong>
-Since packages are stored uniquely with hashes, disk usage can be high.
-					Regular garbage collection is needed.</p>
+                    <strong>2. Software Development : </strong>
+                    Developers can use multiple versions of the same software without conflicts.
+                    Example: Having Python 2.7, 3.8, and 3.10 installed simultaneously. <br><br>
+                    <strong>3. System Administrators : </strong>
+                    Rollbacks and atomic updates make managing servers easier and safer. <br><br>
+                    <strong>4. Research and Science : </strong>
+                    Scientists needing reproducible computational environments benefit from the declarative approach.
+                    <br><br>
+                    <strong>5. Security : </strong>
+                    Since packages are immutable, there is less risk of accidental modification.
+                    No more accidental "rm -rf /usr/bin" disasters. <br><br>
+                </p>
+            </section>
+            <section class="slide8" data-background-image="/assets/back.jpg">
+                <h1>Downsides of NixOS</h1>
+                <p>
+                    <strong>1. Steep Learning Curve:</strong>
+                    Nix’s functional programming language is unusual for system configurations.
+                    Learning to write configuration.nix takes time. <br><br>
+                </p>
+                <p>
+                    <strong>
+                        2. Smaller Community:
+                    </strong>
+                    Compared to Ubuntu, Fedora, or Arch, NixOS has a smaller user base.
+                    Finding help may take longer. <br><br>
+                </p>
+                <p>
+                    <strong>3. Storage Overhead:</strong>
+                    Since packages are stored uniquely with hashes, disk usage can be high.
+                    Regular garbage collection is needed.
+                </p>
 
-			</section>
-			<section class="slide9" data-background-image="/assets/back.jpg">
-				<h1>Key Features of the Nix Language</h1>
-				<ul class="custom-list" style="padding-bottom: 20px;">
-					<p>The Nix language is a purely functional, domain-specific language (DSL) designed for declarative package management and system configuration. It is used primarily in Nix, NixOS, and Nixpkgs to define system states, package builds, and configurations.</p>
-					<li><strong>Purely Functional</strong>: No side effects, same input produces same output.</li> 
-					<li><strong>Declarative</strong>: You describe the desired state, and Nix ensures it.</li>
-					<li><strong>Lazy Evaluation</strong>: Expressions evaluate only when needed.</li>
-					<li><strong>Strongly Typed</strong>: Works with integers, strings, lists, sets, functions, etc.</li>
-					<li><strong>Package-Oriented</strong>: Built to define and manage software dependencies cleanly.
-				</ul>
-			</section>
+            </section>
+            <section class="slide9" data-background-image="/assets/back.jpg">
+                <h1>Key Features of the Nix Language</h1>
+                <ul class="custom-list" style="padding-bottom: 20px;">
+                    <p>The Nix language is a purely functional, domain-specific language (DSL) designed for declarative
+                        package management and system configuration. It is used primarily in Nix, NixOS, and Nixpkgs to
+                        define system states, package builds, and configurations.</p>
+                    <li><strong>Purely Functional</strong>: No side effects, same input produces same output.</li>
+                    <li><strong>Declarative</strong>: You describe the desired state, and Nix ensures it.</li>
+                    <li><strong>Lazy Evaluation</strong>: Expressions evaluate only when needed.</li>
+                    <li><strong>Strongly Typed</strong>: Works with integers, strings, lists, sets, functions, etc.</li>
+                    <li><strong>Package-Oriented</strong>: Built to define and manage software dependencies cleanly.
+                </ul>
+            </section>
+            <section data-background-image="assets/back.jpg" class="slide11">
+                <h1>How to create a nix package</h1>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <p style="height: 20% !important;">Step 1: Create a Directory : </p>
+                    <img data-preview-image src="assets/createdir.png" alt="dir creation" style="width: 40%; margin: 0 !important;">
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <p style="height: 20% !important;">Step 2: Create a Bash Script</p>
+                    <img data-preview-image src="assets/bash.png" alt="dir creation" style="width: 50%; margin: 0 !important;">
+                </div>
+            </section>
+            <section data-background-image="assets/back.jpg" class="slide12">
+                <section>
+                    <h1>Package Creation (continued)</h1>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <p style="height: 20% !important;">Step 3: Write a default.nix</p>
+                        <img data-preview-image src="assets/default.png" alt="dir creation" style="width: 50%; margin: 0 !important;">
+                    </div>
+                </section>
+
+                <section>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <p style="height: 20% !important;">Step 4: Build the Package</p>
+                        <img data-preview-image src="assets/build.png" alt="dir creation" style="width: 50%; margin: 0 !important;">
+                    </div>
+                    <p>This will create a package in ./result/, and you can run it using:
+                        <img data-preview-image src="assets/run.png" alt="dir creation" style="width: 50%; margin: 0 !important;">
+                    </p>
+
+                </section>
+            </section>
+            <section data-background-image="assets/back.jpg">
+                <section>
+                    <h1>3. Packaging an External Source Code</h1>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <p style="height: 20% !important;">We can package package a C program or fetch source code from
+                            GitHub by using the fetchurl or fetchFromGitHub functions. <br><strong>Example: Packaging htop
+                                (from GitHub)</strong> <br>
+                            <img data-preview-image src="assets/htop.png" alt="dir creation" style="width: 40%; margin: 0 !important;">
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h1>Installing the Package</h1>
+                    <p><strong>We can install thepackage by :</strong></p>
+                    <img data-preview-image src="assets/install.png" alt="install" style="width: 50%; margin: 0 !important;">
+                    <p>To unistall : </p>
+                    <img data-preview-image src="assets/uninstall.png" alt="unistall" style="width: 50%; margin: 0 !important;">
+                </section>
+            </section>
         </div>
     </div>
 
@@ -355,7 +410,9 @@ Since packages are stored uniquely with hashes, disk usage can be high.
         // - https://revealjs.com/config/
         Reveal.initialize({
             hash: true,
-
+            autoSlide:15000,
+            loop: false,
+            slideNumber: true,
             // Learn about plugins: https://revealjs.com/plugins/
             plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
         });
